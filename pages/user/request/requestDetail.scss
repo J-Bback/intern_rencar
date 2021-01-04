@@ -1,0 +1,191 @@
+.container {
+  width: 385px;
+
+  .request_detail_wrap {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.1);
+    border-top-right-radius: 21px;
+    border-top-left-radius: 15px;
+
+    .request_detail_header {
+      .header {
+        .list {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          list-style: none;
+          margin-bottom: 1px;
+          .tabList {
+            width: 125px;
+            list-style: none;
+            text-align: center;
+            padding: 15px 0px;
+            border-bottom: 2px solid #e6e6e6;
+            a {
+              color: black;
+              text-decoration: none;
+              font-family: NotoSansCJKkr;
+              font-size: 14px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.43;
+              letter-spacing: normal;
+              text-align: left;
+              color: #b4b4b4;
+            }
+          }
+          .active {
+            width: 125px;
+
+            list-style: none;
+            text-align: center;
+            padding: 15px 0px;
+            border-bottom: 2px solid #1877f2;
+            a {
+              color: #1877f2;
+              text-decoration: none;
+              font-family: NotoSansCJKkr;
+              font-size: 15px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.43;
+              letter-spacing: normal;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    .request_list_wrap {
+      height: 100vh;
+      background-color: #e6e6e6;
+      .request_background {
+        .wrap {
+          height: 100vh;
+          width: 100%;
+          background-color: white;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          margin-top: 200px;
+          img {
+            width: 38px;
+            height: 38px;
+          }
+          .empty {
+            font-family: NotoSansCJKkr;
+            font-size: 14px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.43;
+            letter-spacing: normal;
+            text-align: center;
+            color: #929292;
+          }
+        }
+
+        .information {
+          padding: 15px;
+          font-family: NotoSansCJKkr;
+          font-size: 13px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.46;
+          letter-spacing: normal;
+          text-align: center;
+          color: #b4b4b4;
+        }
+        .request_list {
+          .lists {
+            display: flex;
+            flex-direction: column;
+            list-style: none;
+
+            li {
+              display: flex;
+              flex-direction: column;
+              width: 100%;
+              list-style: none;
+              background-color: white;
+              margin-bottom: 20px;
+              padding: 20px 0px 15px 5px;
+              .header {
+                display: flex;
+                justify-content: space-between;
+                padding: 10px;
+                .title {
+                  font-family: NotoSansKR;
+                  font-size: 16px;
+                  font-weight: 500;
+                  font-stretch: normal;
+                  font-style: normal;
+                  line-height: 1.5;
+                  letter-spacing: normal;
+                  text-align: left;
+                  color: #282828;
+                  align-self: center;
+                }
+                .input {
+                  margin-right: 15px;
+                  background-color: #1877f2;
+                  color: white;
+                  padding: 10px;
+                  border-radius: 10px;
+                  border: none;
+                }
+              }
+              .content {
+                padding: 10px;
+
+                .row {
+                  display: flex;
+                  .car {
+                    font-family: NotoSansKR;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.85;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #929292;
+                  }
+                  .name {
+                    padding-left: 20px;
+                    font-family: NotoSansKR;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.85;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #333333;
+                  }
+                  .info {
+                    padding-left: 10px;
+                    font-family: NotoSansKR;
+                    font-size: 13px;
+                    font-weight: normal;
+                    font-stretch: normal;
+                    font-style: normal;
+                    line-height: 1.85;
+                    letter-spacing: normal;
+                    text-align: left;
+                    color: #333333;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

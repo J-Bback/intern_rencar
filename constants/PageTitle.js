@@ -1,1 +1,1 @@
-export const REGISTER_USER = '회원가입';
+export const REQUEST = '요청서 작성';

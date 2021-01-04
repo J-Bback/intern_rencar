@@ -1,0 +1,44 @@
+.carItem_container {
+  width: 100%;
+  height: 40px;
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: NotoSansKR;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.43;
+  letter-spacing: normal;
+}
+
+.selected_carItem_container {
+  width: 100%;
+  height: 40px;
+  position: relative;
+  padding-left: 20px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: NotoSansKR;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: normal;
+  background-color: rgba(24, 119, 242, 0.1);
+  z-index: -1;
+  color: #1877f2;
+  &::after {
+    background: url('/ic-check@2x.png') no-repeat 15px 7px;
+    background-size: 14.8px 12px;
+    content: '';
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    right: 10px;
+    height: 30px;
+    width: 30px;
+    right: 20px;
+    z-index: -1;
+    position: absolute;
+  }
+}

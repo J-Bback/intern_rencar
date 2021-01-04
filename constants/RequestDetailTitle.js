@@ -1,0 +1,1 @@
+export const REQUEST_DETAIL_TITLE = "상세보기"
