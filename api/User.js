@@ -1,11 +1,21 @@
-import callApi from '../utils/callApi';
+import callApi from "../utils/callApi";
+
+// export default {
+// 	getUserInfo(data) {
+// 		return callApi({
+// 			method: "get",
+// 			url: "/api/getUserInfo",
+// 			params: data
+// 		});
+// 	}
+// };
 
 export default {
-  getUserInfo(data) {
-    return callApi({
-      method: 'get',
-      url: '/api/getUserInfo',
-      params: data
-    })
-  }
-}
+	getCarInfo(data) {
+		return callApi({
+			method: "get",
+			url: "/api/getCarInfo",
+			params: data
+		});
+	}
+};

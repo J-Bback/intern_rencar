@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  padding: 0;
+  margin: 0 20px;
+  .request_list_box {
+    width: 100%;
+    padding: 5px 0 13px 0;
+    background-color: #fcfcfc;
+    .car_data_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;  
+      .car_info {
+        display: block;
+      }
+      .status_button {
+        display: block;
+        height: 28px;
+        margin: 0;
+        padding: 3px 10px 2px 10px;
+        border-radius: 5px;
+        border: solid 1px #e6e6e6;
+        background: none;
+        font-family: NotoSansKR;
+        font-size: 12px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        letter-spacing: normal;
+        color: #1877f2;
+      }
+    }
+    .request_date {
+      display: flexbox;
+      justify-content: space-between;
+      font-family: NotoSansKR;
+      font-size: 13px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #929292;
+      .request_real_time {
+        display: inline-block;
+        margin: 4px 0 4px 8px;
+        font-size: 13px;
+        color: #333333;
+      }
+      .request_number {
+        position: absolute;
+        display: inline;
+        right: 23px;
+        margin: 0;
+        margin-top: 5px;
+        font-family: NotoSansKR;
+        font-size: 15px;
+        color: #575757;
+      }      
+    } 
+  }
+}

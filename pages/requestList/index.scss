@@ -1,0 +1,18 @@
+.container {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  box-sizing: border-box;
+  z-index: 0;
+  .title {
+    margin: 18px 0 10px 0;
+    text-align: center;
+    font-family: NotoSansCJKkr;
+    font-size: 18px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    color: #333333;
+  }
+}
