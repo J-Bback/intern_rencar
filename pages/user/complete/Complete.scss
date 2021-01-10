@@ -1,0 +1,84 @@
+.container {
+  width: 375px;
+
+  .header_wrap {
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 15px 0px;
+    .header {
+      font-family: NotoSansCJKkr;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+    }
+    .cancel {
+      font-size: 23px;
+      align-self: center;
+      padding-right: 20px;
+    }
+  }
+  .content {
+    padding: 20px;
+    .success {
+      padding-bottom: 20px;
+      div {
+        font-family: NotoSansKR;
+        font-size: 22px;
+        font-weight: bold;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.41;
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+      }
+    }
+    .success_message {
+      padding-bottom: 30px;
+      div {
+        font-family: NotoSansCJKkr;
+        font-size: 16px;
+        font-weight: normal;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: left;
+        color: #333333;
+      }
+      span {
+        color: #1877f2;
+      }
+    }
+    .divider {
+      width: 335px;
+      height: 1px;
+      background-color: #333333;
+      margin-bottom: 20px;
+    }
+    .desc_wrap {
+      .group {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 0;
+        div {
+          font-family: NotoSansCJKkr;
+          font-size: 14px;
+          font-weight: normal;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.43;
+          letter-spacing: normal;
+          text-align: left;
+          color: #b4b4b4;
+        }
+      }
+    }
+  }
+}

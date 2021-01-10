@@ -1,0 +1,114 @@
+.headerWrap {
+  width: 375px;
+  .header {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    .imageWrap {
+      padding-left: 20px;
+      img {
+        padding-top: 5px;
+      }
+    }
+    .title {
+      align-self: center;
+      font-family: NotoSansCJKkr;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+      padding-top: 1px;
+      padding-right: 10px;
+    }
+
+    .empty {
+      padding-right: 40px;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: #e6e6e6;
+    margin: 12px 0px;
+  }
+}
+.content {
+  padding: 0px 20px;
+
+  .requestId {
+    font-family: NotoSansCJKkr;
+    font-size: 14px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    text-align: center;
+    color: #333333;
+  }
+  .processWrap {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 1px;
+    background-color: #ffffff;
+    .wrap {
+      display: flex;
+      width: 100%;
+      div {
+        text-align: center;
+
+        &:first-child {
+          margin-left: 15px;
+        }
+        &:last-child {
+          padding-right: 0px;
+        }
+      }
+    }
+  }
+}
+.displayWrap {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 20px;
+  background-color: #f2f3f5;
+
+  .imageWrap {
+    object-fit: contain;
+    width: 30px;
+    height: 30px;
+    margin-right: 15px;
+    margin-top: 10px;
+    img {
+      width: 100%;
+    }
+  }
+  .displayGroup {
+    .carTitle {
+      text-align: center;
+      font-family: NotoSansCJKkr;
+      font-size: 12px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      color: #929292;
+    }
+    .car {
+      padding-top: 10px;
+      text-align: center;
+      background-color: #f2f3f5;
+    }
+    &:last-child {
+      margin-right: 20px;
+    }
+  }
+}

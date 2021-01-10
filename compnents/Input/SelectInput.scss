@@ -1,0 +1,40 @@
+.inputWrap {
+  position: relative;
+  width: 162.5px;
+  margin: 5px auto;
+  border-radius: 8px;
+  border: solid 1px #f2f3f5;
+  background-color: #f7f8fa;
+
+  input {
+    width: 100%;
+    padding: 15px 10px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+
+    &::placeholder {
+      padding-left: 10px;
+      font-family: NotoSansCJKkr;
+      font-size: 14px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.43;
+      letter-spacing: normal;
+      text-align: left;
+      color: #b4b4b4;
+    }
+  }
+
+  .arrowWrap {
+    position: absolute;
+    width: 15px;
+    top: 13px;
+    right: 10px;
+
+    .arrow {
+      width: 100%;
+    }
+  }
+}

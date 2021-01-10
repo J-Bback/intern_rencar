@@ -1,0 +1,42 @@
+.companyItem_container {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  font-family: NotoSansKR;
+  font-size: 14px;
+  color: #333333;
+  line-height: 1.43;
+  padding: 20px;
+  letter-spacing: normal;
+}
+.selected_companyItem_container {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  position: relative;
+  justify-content: flex-start;
+  align-items: center;
+  font-family: NotoSansKR;
+  font-size: 14px;
+  padding: 20px;
+  line-height: 1.43;
+  letter-spacing: normal;
+  background-color: rgba(24, 119, 242, 0.1);
+  z-index: -1;
+  color: #1877f2;
+  &::after {
+    background: url('/ic-check@2x.png') no-repeat 15px 7px;
+    background-size: 14.8px 12px;
+    content: '';
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50px;
+    height: 30px;
+    width: 30px;
+    left: 140px;
+    z-index: -1;
+  }
+}
