@@ -3,21 +3,20 @@
   padding-top: 20px;
   width: 86px;
 
-  .dotNow {
+  .dot_now {
     position: absolute;
     left: 9px;
     bottom: 20px;
     width: 10px;
     height: 10px;
-    border: solid 1px #1877f2;
+    border: solid 2px #1877f2;
     background-color: #ffffff;
     border-radius: 50%;
     z-index: 1;
   }
-  .dotWaiting {
+  .dot_waiting {
     position: absolute;
-    display: none;
-    left: 24px;
+    left: 10px;
     bottom: 20px;
     width: 12px;
     height: 12px;
@@ -25,10 +24,9 @@
     border-radius: 50%;
     z-index: 1;
   }
-  .dotFinish {
+  .dot_finish {
     position: absolute;
-    display: none;
-    left: 24px;
+    left: 10px;
     bottom: 20px;
     width: 12px;
     height: 12px;
@@ -39,9 +37,9 @@
       content: '';
       position: absolute;
       transform: rotate(45deg);
-      left: 5px;
+      left: 4px;
       top: 2px;
-      width: 2px;
+      width: 3px;
       height: 4px;
       border-bottom: 1px solid white;
       border-right: 1px solid white;
@@ -70,7 +68,7 @@
     color: #1877f2;
   }
 }
-.lineWaiting {
+.line_waiting {
   position: absolute;
   height: 4px;
   margin: 5px 0 6px;
@@ -80,9 +78,9 @@
   background-color: #e6e6e6;
 }
 
-.lineFinish {
+.line_finish {
   position: absolute;
-  display: none;
+
   width: 100%;
   height: 4px;
   margin: 5px 0 6px;

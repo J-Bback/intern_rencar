@@ -1,5 +1,10 @@
 export const DetailTab = [
   {
+    id: 0,
+    name: '채팅',
+    url: 'chat',
+  },
+  {
     id: 1,
     name: '제안',
     url: '',

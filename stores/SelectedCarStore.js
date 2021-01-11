@@ -4,6 +4,7 @@ class SelectedCarStore {
   @observable selectedCarBrand = null;
   @observable selectedCarName = null;
   @observable selectedCarId = null;
+  @observable isEdit = false;
 
   constructor() {}
 
@@ -15,6 +16,9 @@ class SelectedCarStore {
   };
   @action setSelectedCarId = (id) => {
     this.selectedCarId = id;
+  };
+  @action setIsEdit = (condition) => {
+    this.isEdit = condition;
   };
 }
 

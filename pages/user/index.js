@@ -32,7 +32,7 @@ import styles from './Request.scss';
 import { useObserver } from 'mobx-react';
 import useStore from '../../stores';
 import axios from 'axios';
-import { SERVER_URI } from '../../config';
+import { SERVER_URL } from '../../config';
 const image = true;
 
 const Request = () => {
@@ -53,7 +53,7 @@ const Request = () => {
       return;
     }
     axios
-      .post(`${SERVER_URI}/request`, {
+      .post(`${SERVER_URL}/request`, {
         additional_info: RequestInputStore.additionalRequest,
         car_id: SelectedCarStore.selectedCarId,
         car_number: RequestInputStore.carNumber,
@@ -62,10 +62,11 @@ const Request = () => {
         city: RequestInputStore.region.split(' ')[1],
       })
       .then((res) => {
+        console.log(res);
         if (res.status === 200) {
-          const { id } = res.data;
+          const { id } = res.data.request;
           RequestInputStore.setRequestId(id);
-          router.push('/user/complete');
+          router.push(`/user/complete/${id}`);
           RequestInputStore.additionalRequest = '';
           RequestInputStore.carNumber = '';
           SelectedCarStore.selectedCarId = '';

@@ -1,0 +1,153 @@
+.login_container {
+  padding: 0;
+  margin: 0;
+  height: 100vh;
+  width: 375px;
+  background-color: white;
+  position: relative;
+  .logo {
+    padding: 20px;
+  }
+  .text_wrap {
+    width: 217px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-bottom: 20px;
+    .title {
+      font-family: NotoSansCJKkr;
+      font-size: 24px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+    }
+    .greeting {
+      width: 100%;
+      font-family: NotoSansCJKkr;
+      font-size: 20px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.45;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+    }
+    .welcome_to {
+      width: 117px;
+      height: 33px;
+      margin: 0 61px 8px 10px;
+      object-fit: contain;
+      font-family: NotoSansCJKkr;
+      font-size: 22px;
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 2;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+    .logo_IMS {
+      width: 79.2px;
+      height: 30px;
+      margin: 0px 98.8px 46px 10px;
+      object-fit: contain;
+    }
+  }
+
+  .login_input {
+    width: 345px;
+    position: absolute;
+    top: 273px;
+    cursor: pointer;
+
+    padding: 0 15px;
+    .input_bottom_line {
+      width: 345px;
+      height: 1px;
+      margin-bottom: 20px;
+      object-fit: contain;
+      background-color: rgba(246, 246, 246, 0.3);
+    }
+    input {
+      width: 345px;
+      height: 30px;
+      color: black;
+      background-color: transparent;
+      border-style: none;
+      ::placeholder {
+        color: white;
+      }
+    }
+  }
+
+  .login_bottom_wrap {
+    width: 325px;
+    position: absolute;
+    bottom: 183px;
+    left: 25px;
+    .login_button_wrap {
+      position: relative;
+      .login_Button {
+        width: 325px;
+        height: 48px;
+
+        object-fit: contain;
+        border-radius: 8px;
+        background-color: #1877f2;
+      }
+      .login_Button_text {
+        width: 44px;
+        height: 24px;
+        object-fit: contain;
+        font-family: NotoSansCJKkr;
+
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        position: absolute;
+        top: 11px;
+        left: 45%;
+        cursor: pointer;
+      }
+    }
+
+    .signup_button_wrap {
+      position: relative;
+      .signup_Button {
+        width: 325px;
+        height: 48px;
+        margin-top: 10px;
+        object-fit: contain;
+        border-radius: 8px;
+        background-color: rgba(248, 251, 255, 0.06);
+      }
+      .signup_Button_text {
+        height: 24px;
+        object-fit: contain;
+        font-family: NotoSansCJKkr;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        letter-spacing: normal;
+        text-align: center;
+        color: #ffffff;
+        position: absolute;
+        top: 19px;
+        left: 110px;
+        cursor: pointer;
+      }
+    }
+  }
+}

@@ -1,30 +1,27 @@
-import axios from "axios";
-import { baseUrl } from "../config";
+import axios from 'axios';
+import { SERVER_URL } from '../config';
 
 const instance = axios.create({
-	baseURL: baseUrl,
-	timeout: 10000
+  baseURL: SERVER_URL,
+  timeout: 10000,
 });
 
 instance.interceptors.request.use(
-	(config) => {
-		// console.log(config);
-		return config;
-	},
-	(error) => {
-		return Promise.reject(error);
-	}
+  (config) => {
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
 );
 
 instance.interceptors.response.use(
-	(response) => {
-		if (response.status == 200) {
-			return response;
-		}
-	},
-	(error) => {
-		return Promise.reject(error);
-	}
+  (response) => {
+    return response;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
 );
 
 export default instance;

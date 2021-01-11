@@ -4,7 +4,7 @@ import styles from './UserInput.scss';
 const UserInput = ({ id, label, type, value, placeholder, name, onChange }) => {
   console.log(value, name, 'dd');
   return (
-    <div className={styles.inputWrap}>
+    <div className={styles.input_wrap}>
       <label htmlFor={id ? id : null} children={label} />
       <input
         id={id ? id : null}
