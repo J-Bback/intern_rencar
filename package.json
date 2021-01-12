@@ -9,13 +9,19 @@
   },
   "dependencies": {
     "axios": "^0.21.0",
+    "classnames": "^2.2.6",
+    "cookie": "^0.4.1",
+    "cookie-cutter": "^0.2.0",
+    "js-cookie": "^2.2.1",
     "markdown-with-front-matter-loader": "^0.1.0",
     "mobx": "^4.15.7",
     "mobx-react": "^6.3.1",
     "next": "10.0.1",
     "normalize.css": "^8.0.1",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "socket.io": "^3.0.5",
+    "socket.io-client": "^3.0.5"
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.12.1",

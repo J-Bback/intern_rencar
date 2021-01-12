@@ -3,9 +3,12 @@ import styles from './Proposal.scss';
 import useStore from '../../../stores';
 import { useRouter } from 'next/router';
 import { useObserver } from 'mobx-react';
-import { SERVER_URI } from '../../../config';
+import { SERVER_URL } from '../../../config';
 
-import { PROPOSAL_HEADER, PROPOSAL_FOOTER } from '../../../constants/ProposalInfo';
+import {
+  PROPOSAL_HEADER,
+  PROPOSAL_FOOTER,
+} from '../../../constants/ProposalInfo';
 import axios from 'axios';
 import CompanyItem from './CompanyItem';
 import CarItem from './CarItem';
@@ -13,8 +16,8 @@ import CarItem from './CarItem';
 const SelectBrand = ({}) => {
   const router = useRouter();
   const { SelectedCarStore } = useStore();
-  const [selectedCompany, setSelectedCompany] = useState([]);
-  const [selectedCar, setSelectedCar] = useState([]);
+  const [selectedCompany, setSelectedCompany] = useState('');
+  const [selectedCar, setSelectedCar] = useState('');
   const [isActive, setIsActive] = useState(false);
 
   const isValid =
@@ -22,17 +25,15 @@ const SelectBrand = ({}) => {
     SelectedCarStore.selectedCarName !== '';
 
   const getData = () => {
-    axios.get(`${SERVER_URI}/car`).then((res) => {
+    axios.get(`${SERVER_URL}/car`).then((res) => {
       const data = res.data.data;
-      console.log(data);
       setSelectedCompany(data);
     });
   };
 
   const getSelectedCar = (brand) => {
-    axios.get(`${SERVER_URI}/car?brand=${brand}`).then((res) => {
+    axios.get(`${SERVER_URL}/car?brand=${brand}`).then((res) => {
       const { data } = res.data;
-      console.log(data);
       setSelectedCar(data);
     });
   };

@@ -11,7 +11,7 @@ const SelectInput = ({
   onClick,
 }) => {
   return (
-    <div className={styles.inputWrap}>
+    <div className={styles.input_wrap}>
       <label htmlFor={id ? id : null} children={label} />
       <input
         id={id ? id : null}
@@ -21,7 +21,7 @@ const SelectInput = ({
         placeholder={placeholder}
       />
       {image ? (
-        <div className={styles.arrowWrap}>
+        <div className={styles.arrow_wrap}>
           <img
             src='/ic-mypage-arrow.png'
             srcSet='/ic-mypage-arrow@2x.png, /ic-mypage-arrow@3x.png'

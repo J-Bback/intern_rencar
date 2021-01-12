@@ -1,0 +1,141 @@
+.container {
+  width: 385px;
+  margin: 0;
+  padding: 0;
+  padding: 0;
+
+  .header_wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: #ffffff;
+    padding: 12px 0px;
+    .image_wrap {
+      padding-left: 20px;
+      img {
+        padding-top: 3px;
+      }
+    }
+
+    .header {
+      font-family: NotoSansCJKkr;
+      font-size: 18px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.5;
+      letter-spacing: normal;
+      text-align: left;
+      color: #333333;
+      padding-right: 30px;
+      padding-top: 5px;
+    }
+
+    .cancel {
+      font-size: 23px;
+      align-self: center;
+      padding-right: 20px;
+    }
+  }
+
+  .divider {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .request_detail_wrap {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    width: 100%;
+    margin-top: 15px;
+    .request_detail_header {
+      box-shadow: 0 -3px 4px 0 rgba(0, 0, 0, 0.1);
+      border-top-right-radius: 21px;
+      background-color: white;
+      border-top-left-radius: 15px;
+      .header {
+        .list {
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          padding: 0;
+          .tab_list {
+            width: 125px;
+            list-style: none;
+            text-align: center;
+            padding: 15px 0px;
+            border-bottom: 1px solid #e6e6e6;
+            a {
+              color: black;
+              text-decoration: none;
+              font-family: NotoSansCJKkr;
+              font-size: 14px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.43;
+              letter-spacing: normal;
+              text-align: left;
+              color: #b4b4b4;
+            }
+          }
+          .active {
+            width: 125px;
+            list-style: none;
+            text-align: center;
+            padding: 15px 0px;
+            border-bottom: 2px solid #1877f2;
+            a {
+              color: #1877f2;
+              text-decoration: none;
+              font-family: NotoSansCJKkr;
+              font-size: 15px;
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.43;
+              letter-spacing: normal;
+              text-align: left;
+            }
+          }
+        }
+      }
+    }
+
+    .chatting_room {
+      width: 100%;
+      height: 100%;
+      overflow: scroll;
+    }
+  }
+}
+
+.show {
+  animation: show_slide 1s ease forwards;
+  height: 720px;
+}
+
+@keyframes show_slide {
+  0% {
+  }
+
+  100% {
+    transform: translateY(-200px);
+  }
+}
+
+.hide {
+  animation: hide_slide 1s ease forwards;
+  height: 520px;
+}
+
+@keyframes hide_slide {
+  0% {
+    transform: translateY(-200px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}

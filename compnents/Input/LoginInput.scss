@@ -1,0 +1,22 @@
+.input_container {
+  position: relative;
+  width: 100%;
+
+  .user_input {
+    width: 345px;
+    height: 30px;
+    color: white;
+    background-color: transparent;
+    border-style: none;
+    outline: none;
+
+    &:focus {
+      box-shadow: none;
+      outline: none;
+    }
+
+    &::placeholder {
+      color: white;
+    }
+  }
+}

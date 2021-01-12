@@ -1,12 +1,12 @@
 import { observable, action } from 'mobx';
 
 class SelectedRequestTabId {
-  @observable selectedTabId = 1;
+  @observable selectedTabId = '';
 
   constructor() {}
 
-  @action setSelectedTabId = (id) => {
-    this.selectedTabId = id;
+  @action setSelectedTabId = (url) => {
+    this.selectedTabId = url;
   };
 }
 

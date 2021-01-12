@@ -10,25 +10,24 @@ import {
 import { useObserver } from 'mobx-react';
 import useStore from '../../../stores';
 import styles from './Complete.scss';
-import { SERVER_URI } from '../../../config';
+import { SERVER_URL } from '../../../config';
+
 import axios from 'axios';
 
 const isComplete = true;
 
-const Complete = () => {
+export async function getServerSideProps(context) {
+  const { id } = context.query;
+  const res = await axios.get(`${SERVER_URL}/rencar/request/${id}`);
+  const { request } = await res.data;
+
+  return {
+    props: { request },
+  };
+}
+
+const Complete = ({ request }) => {
   const rotuer = useRouter();
-  const { RequestInputStore, SelectedCarStore } = useStore();
-
-  // const getInfo = () => {
-  //   axios
-  //     .get(`${SERVER_URI}/request/${RequestInputStore.requestId}`)
-  //     .then((res) => console.log(res))
-  //     .catch((err) => console.log(err));
-  // };
-
-  // useEffect(() => {
-  //   getInfo();
-  // }, []);
 
   return useObserver(() => (
     <div className={styles.container}>
@@ -52,22 +51,22 @@ const Complete = () => {
         <div className={styles.desc_wrap}>
           <div className={styles.group}>
             <div>{CAR_NAME}</div>
-            <div>{SelectedCarStore.selectedCarName}</div>
+            <div>{request?.car.model}</div>
           </div>
           <div className={styles.group}>
             <div>{CAR_NUMBER}</div>
-            <div>{RequestInputStore.carNumber}</div>
+            <div>{request.car_number}</div>
           </div>
           <div className={styles.group}>
             <div>{REQUEST_NUMBER}</div>
-            <div>{RequestInputStore.requestId}</div>
+            <div>{request.id}</div>
           </div>
         </div>
         <RequestButton
           value={GO_TO_DETAIL}
           isComplete={isComplete}
           onClick={() => {
-            rotuer.push('/user/request');
+            rotuer.push(`/user/request/${request.id}`);
           }}
         />
       </div>

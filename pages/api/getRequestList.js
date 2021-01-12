@@ -1,15 +1,17 @@
 const requestList = [
   {
-    name: '회사 이름',
-    first_car: '카1',
-    second_car: '카2',
-    additional_information: 'male',
+    id: 1,
+    name: 'wecode',
+    first_car: 'apple',
+    second_car: 'banana',
+    additional_information: '깨끗한 차 부탁려요.',
   },
   {
-    name: '회사 이름',
-    first_car: '카1',
-    second_car: '카2',
-    additional_information: 'male',
+    id: 2,
+    name: 'rencar',
+    first_car: 'orange',
+    second_car: 'kiwi',
+    additional_information: '담배 냄새 싫어요!',
   },
 ];
 export default async (req, res) => {
