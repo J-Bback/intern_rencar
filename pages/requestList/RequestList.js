@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import { useRouter } from "next/router";
 import styles from "./RequestList.scss";
 import {
 	REQUEST_DATE,
@@ -7,6 +8,8 @@ import {
 } from "../../constants/RequestList/RequestList";
 
 export default function RequestList({ requestData }) {
+	console.log(requestData);
+	const router = useRouter();
 	return (
 		<Fragment>
 			{requestData?.map((list) => {
@@ -24,12 +27,16 @@ export default function RequestList({ requestData }) {
 					3: { color: "#333333" },
 					4: { color: "#f84b4b" }
 				};
+				// router.push(`/user/request/${id}`)
 				return (
 					<Fragment>
 						<div
 							style={{ backgroundColor: "#f7f8fa", padding: 0, height: "11px" }}
 						/>
-						<div className={styles.container}>
+						<div
+							className={styles.container}
+							onClick={(e) => router.push(`/user/request/${list.id}`)}
+						>
 							<div className={styles.request_list_box}>
 								<div className={styles.car_data_container}>
 									<p className={styles.car_info}>

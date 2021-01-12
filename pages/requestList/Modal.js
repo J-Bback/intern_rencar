@@ -38,7 +38,7 @@ export default function Modal({
 							<img
 								src="/ic-close.png"
 								srcSet="/ic-close@2x.png 2x,
-						 /ic-close@3x.png 3x"
+						 						/ic-close@3x.png 3x"
 							/>
 						</div>
 					</div>

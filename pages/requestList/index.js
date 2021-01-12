@@ -8,7 +8,7 @@ import useStore from "../../stores";
 import { TITLE } from "../../constants/RequestList/Title";
 import axios from "axios";
 import { useObserver } from "mobx-react";
-import { SERVER_URI } from "../../config";
+import { SERVER_URL } from "../../config";
 
 const { modalStore } = useStore();
 const { filterStore } = useStore();
@@ -132,27 +132,14 @@ const index = ({ data, lists }) => {
 				""
 			)}
 			<Footer />
-			{/* <div style={{ backgroundColor: "#f7f8fa", padding: 0, height: "55px" }} /> */}
 		</Fragment>
 	));
 };
-
-// export async function getServerSideProps() {
-// 	const res = await axios.get("http://localhost:5800/api/requestListData");
-// 	const data = res.data;
-
-// 	return {
-// 		props: {
-// 			data
-// 		}
-// 	};
-// }
 
 export async function getServerSideProps(context) {
 	const { id } = context.query;
 	const res = await axios.get(`${SERVER_URL}/rencar/request`);
 	const lists = await res.data.requests;
-
 	return {
 		props: { lists }
 	};

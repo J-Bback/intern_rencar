@@ -9,19 +9,12 @@ import { useObserver } from "mobx-react";
 const { modalStore } = useStore();
 
 const Search = ({ handleFilterBtn, handleSearch, requestData }) => {
-	const [getData, setGetData] = useState(null);
-	const [brand, setBrand] = useState(null);
-	const [openModal, setOpenModal] = useState(false);
-
-	const submit = async () => {
-		const data = { brand: brand };
-		const response = await apiUser.getCarInfo(data);
-		const responseData = response.data;
-		setGetData(responseData.carRequestList);
+	const submit = async (e) => {
+		console.log(e, "검색버튼");
 	};
 
 	return useObserver(() => (
-		<form onSubmit={() => submit} className={styles.search_container}>
+		<form onSubmit={(e) => submit(e)} className={styles.search_container}>
 			<input
 				id="brand"
 				className={styles.search}
