@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "./Footer.scss";
 export default function Footer() {
-	const [homeBtnOn, setHomeBtnOn] = useState(true);
+	const [homeBtnOn, setHomeBtnOn] = useState(false);
 	const [bellBtnOn, setBellBtnOn] = useState(false);
-	const [callListBtnOn, setCallListBtnOn] = useState(false);
+	const [callListBtnOn, setCallListBtnOn] = useState(true);
 	const [myPageBtnOn, setMyPageBtnOn] = useState(false);
 
 	const router = useRouter();
@@ -17,8 +17,8 @@ export default function Footer() {
 				setHomeBtnOn(true),
 				setBellBtnOn(false),
 				setCallListBtnOn(false),
-				setMyPageBtnOn(false),
-				router.push("/user/request")
+				setMyPageBtnOn(false)
+				// router.push("/user/request")
 			);
 		}
 		if (e.target.id == 2) {
