@@ -64,7 +64,7 @@ const Complete = ({ request }) => {
           value={GO_TO_DETAIL}
           isComplete={isComplete}
           onClick={() => {
-            rotuer.push(`/user/request/${request.id}`);
+            rotuer.push(`/requestList/`);
           }}
         />
       </div>

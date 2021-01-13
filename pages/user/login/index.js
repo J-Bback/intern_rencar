@@ -27,7 +27,7 @@ const LoginPage = () => {
         if (result.data.token) {
           cookie.set('token', result.data.token);
           alert('로그인에 성공하셨습니다.');
-          router.push('/user');
+          router.push('/requestList');
         }
         if (result.error === 403) {
           alert(result.message);

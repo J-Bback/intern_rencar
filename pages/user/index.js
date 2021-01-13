@@ -84,7 +84,11 @@ const Request = () => {
       <div className={styles.header_wrap}>
         <div></div>
         <div className={styles.header}>{REQUEST}</div>
-        <div className={styles.cancel}>X</div>
+        <div
+          className={styles.cancel}
+          onClick={() => router.push('/requestList')}>
+          X
+        </div>
       </div>
       <div className={styles.divider}></div>
       <div className={styles.request_wrap}>
