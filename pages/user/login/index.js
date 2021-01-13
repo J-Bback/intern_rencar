@@ -61,8 +61,8 @@ const LoginPage = () => {
           />
           <img
             src='/1641.png'
-            srcSet='/1641@2x.png 2x,
-            /1641@3x.png 3x'
+            srcSet='/1641@2x.png,
+            /1641@3x.png'
             className={styles.input_bottom_line}
           />
         </div>
@@ -79,8 +79,8 @@ const LoginPage = () => {
           />
           <img
             src='/1641.png'
-            srcSet='/1641@2x.png 2x,
-             /1641@3x.png 3x'
+            srcSet='/1641@2x.png,
+             /1641@3x.png'
             className={styles.input_bottom_line}
           />
         </div>
@@ -94,14 +94,14 @@ const LoginPage = () => {
           }}>
           <img
             src='/rectangle.png'
-            srcSet='/rectangle@2x.png 2x,
-            /rectangle@3x.png 3x'
+            srcSet='/rectangle@2x.png,
+            /rectangle@3x.png'
             className={styles.login_Button}
           />
           <img
             src='/log-in.png'
-            srcSet='/log-in@2x.png 2x,
-            /log-in@3x.png 3x'
+            srcSet='/log-in@2x.png,
+            /log-in@3x.png'
             className={styles.login_Button_text}
           />
         </div>

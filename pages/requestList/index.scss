@@ -2,17 +2,24 @@
   position: relative;
   width: 100%;
   height: auto;
+  background-color: #f7f8fa;
   margin: 0;
   box-sizing: border-box;
   z-index: 0;
   .title {
-    margin: 18px 0 10px 0;
+    padding-top: 20px;
+    padding-bottom: 10px;
     text-align: center;
     font-family: NotoSansCJKkr;
     font-size: 18px;
     font-weight: 500;
     font-stretch: normal;
     font-style: normal;
+    background-color: white;
     color: #333333;
+  }
+  .wrap {
+    overflow: scroll;
+    height: 96vh;
   }
 }

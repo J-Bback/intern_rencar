@@ -52,6 +52,7 @@ export default function RequestList({ requestData }) {
 										style={statusColor[list?.status]}
 									/>
 								</div>
+								
 								<div className={styles.request_date}>
 									{REQUEST_DATE}
 									<p className={styles.request_real_time}>

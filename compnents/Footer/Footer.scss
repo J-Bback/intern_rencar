@@ -1,7 +1,7 @@
 .container {
   position: relative;
   width: 100%;
-  height: auto;
+  // height: auto;
   font-family: NotoSansCJKkr;
   font-size: 10px;
   font-weight: normal;
@@ -9,6 +9,7 @@
   font-style: normal;
   letter-spacing: normal;
   color: #929292;
+  background-color: transparent;
   .footer_wrap {
     position: fixed;
     bottom: 78px;
@@ -17,6 +18,7 @@
     padding: 0;
     height: auto;
     object-fit: contain;
+
     img {
       position: fixed;
       bottom: -18px;
@@ -26,7 +28,7 @@
       margin: 0;
       padding: 0;
       // box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
-      background-color: #f7f8fa;
+      // background-color: #f7f8fa;
       z-index: 10;
     }
     .home_container {
@@ -160,8 +162,5 @@
         font-size: 8px;
       }
     }
-
-
-
   }
 }
