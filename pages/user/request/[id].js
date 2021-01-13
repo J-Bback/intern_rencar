@@ -1,11 +1,11 @@
 import react, { useState, useEffect, useRef } from 'react';
 import { RequestHeader } from '../../../compnents/Header';
-import { DetailTab } from '../../../constants/DetailTab';
+import { DetailTab } from '../../../constants/Request/DetailTab';
 import {
   FIRST_CAR,
   SECONDE_CAR,
   ADDITIONAL_REQUEST,
-} from '../../../constants/SuggestionLabel';
+} from '../../../constants/Request/SuggestionLabel';
 import { useObserver } from 'mobx-react';
 import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
@@ -17,7 +17,6 @@ import styles from './requestDetail.scss';
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const res = await axios.get(`${SERVER_URL}/rencar/request/${id}`);
-  console.log(res);
   const { request, suggestions } = await res.data;
 
   return {
@@ -32,6 +31,12 @@ const requestDetail = ({ suggestions, request }) => {
   const cn = classNames.bind(styles);
   const reservation_id =
     typeof window !== 'undefined' ? localStorage.getItem('reservation') : null;
+
+  useEffect(() => {
+    if (!localStorage.getItem('reservation') && request.status == 3) {
+      console.log('finish');
+    }
+  }, []);
 
   const onSelectProposal = (id) => {
     const token = cookieCutter.get('token');

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyRequest.scss';
-import { DetailTab } from '../../../../constants/DetailTab';
+import { DetailTab } from '../../../../constants/Request/DetailTab';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
@@ -8,11 +8,11 @@ import useStore from '../../../../stores';
 import { RequestHeader } from '../../../../compnents/Header';
 import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
-import * as RequestLabel from '../../../../constants/RequestLabel';
+import * as RequestLabel from '../../../../constants/Request/RequestLabel';
 import {
   REQUEST_CANCEL,
   REQUEST_EDIT,
-} from '../../../../constants/CompleteMessageButton';
+} from '../../../../constants/Request/CompleteMessageButton';
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
@@ -26,7 +26,7 @@ export async function getServerSideProps(context) {
 
 const { SelectedRequestTabId, SelectedCarStore } = useStore();
 
-const MyRequest = ({ request }) => {
+const MyRequest = ({ request, suggestions }) => {
   const [pageId, setPageId] = useState('2');
   const router = useRouter();
   const [clicked, setClicked] = useState(false);

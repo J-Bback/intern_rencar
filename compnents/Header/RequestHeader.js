@@ -1,5 +1,5 @@
-import React from 'react';
-import { REQUEST_DETAIL_TITLE } from '../../constants/RequestDetailTitle';
+import React, { useState, useEffect } from 'react';
+import { REQUEST_DETAIL_TITLE } from '../../constants/Request/RequestDetailTitle';
 import {
   RequestProcessBar,
   ReservationProcessBar,
@@ -9,6 +9,7 @@ import {
 import styles from './RequestHeader.scss';
 import { useRouter } from 'next/router';
 import { useObserver } from 'mobx-react';
+import useStore from '../../stores';
 
 function RequestHeader({
   id,
@@ -18,7 +19,28 @@ function RequestHeader({
   return_date,
   dispatch_car,
 }) {
+  const { ShowDispatchAndReturnStore } = useStore();
   const router = useRouter();
+
+  useEffect(() => {
+    if (dispatch_car !== undefined) {
+      const dispatchAndReturnData = {
+        dispatchCar: dispatch_car,
+        returnDate: return_date,
+        dispatchDate: dispatch_date,
+      };
+      ShowDispatchAndReturnStore.setValue(dispatchAndReturnData);
+    }
+  }, []);
+
+  const {
+    dispatchCar,
+    returnDate,
+    dispatchDate,
+  } = ShowDispatchAndReturnStore.dispatchAndReturnData;
+
+  console.log(ShowDispatchAndReturnStore.dispatchAndReturnData);
+  console.log(dispatchCar, returnDate, dispatchDate);
   const showProcess = {
     0: <RequestProcessBar />,
     1: <ReservationProcessBar />,
@@ -42,14 +64,14 @@ function RequestHeader({
     2: {
       title: '배차차량',
       date: '배차일시',
-      accident_car: dispatch_car ? dispatch_car : '',
-      wish_car: dispatch_date ? dispatch_date : '',
+      accident_car: dispatch_car ? dispatch_car : dispatchCar,
+      wish_car: dispatch_date ? dispatch_date : dispatchDate,
     },
     3: {
       title: '배차차량',
       date: '반납일시',
-      accident_car: dispatch_car ? dispatch_car : '',
-      wish_car: return_date ? return_date : '',
+      accident_car: dispatch_car ? dispatch_car : dispatchCar,
+      wish_car: return_date ? return_date : returnDate,
     },
   };
 

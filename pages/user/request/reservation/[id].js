@@ -5,19 +5,21 @@ import {
   FIRST_CAR,
   SECONDE_CAR,
   ADDITIONAL_REQUEST,
-} from '../../../../constants/SuggestionLabel';
-import { DetailTab } from '../../../../constants/DetailTab';
+} from '../../../../constants/Request/SuggestionLabel';
+import { DetailTab } from '../../../../constants/Request/DetailTab';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
 import classNames from 'classnames/bind';
 import { RequestHeader } from '../../../../compnents/Header';
 import { useRouter } from 'next/router';
+import Modal from '../../../../compnents/Modal';
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
   const res = await axios.get(`${SERVER_URL}/rencar/request/${id}`);
   const { request, suggestions } = await res.data;
+
   return {
     props: { request, suggestions },
   };
@@ -26,9 +28,18 @@ export async function getServerSideProps(context) {
 const Reservation = ({ request, suggestions }) => {
   const [pageId, setPageId] = useState('1');
   const [clicked, setClicked] = useState(false);
+  const [isModal, setIsModal] = useState(false);
   const router = useRouter();
   const cn = classNames.bind(styles);
   const [result] = suggestions && suggestions;
+
+  console.log(request, 'cancel');
+
+  useEffect(() => {
+    if (request.status == 3 || request.status == 0) {
+      setIsModal(true);
+    }
+  }, []);
 
   const tabs = DetailTab.map((tab) => {
     const reservation_id =
@@ -63,6 +74,14 @@ const Reservation = ({ request, suggestions }) => {
       </li>
     );
   });
+
+  const onModalHandler = () => {
+    if (request.status == 0) {
+      localStorage.setItem('reservation', '');
+      router.push(`/user/request/${request.id}`);
+    }
+    setIsModal(false);
+  };
 
   return (
     <div className={styles.container}>
@@ -114,6 +133,11 @@ const Reservation = ({ request, suggestions }) => {
           </div>
         </div>
       </div>
+      <Modal
+        isModal={isModal}
+        onModalHandler={onModalHandler}
+        status={request.status}
+      />
     </div>
   );
 };

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ChatContainer from './ChatContainer';
 import { RequestHeader } from '../../../../compnents/Header';
 import { useRouter } from 'next/router';
-import { DetailTab } from '../../../../constants/DetailTab';
+import { DetailTab } from '../../../../constants/Request/DetailTab';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
@@ -21,15 +21,14 @@ export async function getServerSideProps(context) {
 
 const Chatting = ({ request }) => {
   const [pageId, setPageId] = useState('0');
-  const [clicked, setClicked] = useState(false);
   const router = useRouter();
-  const cn = classNames.bind(styles);
 
   const tabs = DetailTab.map((tab) => {
     const reservation_id =
       typeof window !== 'undefined'
         ? localStorage.getItem('reservation')
         : null;
+
     return (
       <li
         className={tab.id == pageId ? styles.active : styles.tab_list}
@@ -48,12 +47,14 @@ const Chatting = ({ request }) => {
       </li>
     );
   });
+
   return (
     <div className={styles.container}>
       <RequestHeader
         id={request.id}
         car={request?.car.brand}
         model={request?.car.model}
+        status={request.status}
       />
       <div className={styles.request_detail_wrap}>
         <div className={styles.request_detail_header}>

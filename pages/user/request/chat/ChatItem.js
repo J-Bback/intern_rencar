@@ -30,18 +30,3 @@ const ChatItem = ({ message, name, date, user }) => {
 };
 
 export default ChatItem;
-
-// return (
-//   <div
-//     className={
-//       name === user ? styles.chatItem_supplier : styles.chatItem_client
-//     }>
-//     <div className={styles.nameContainer}>
-//       <div className={styles.name}>{name}</div>
-//     </div>
-//     <div className={styles.messageContainer}>
-//       <span className={styles.date}>{date.split(' ')[1]}</span>
-//       <span className={styles.message}>{message}</span>
-//     </div>
-//   </div>
-// );

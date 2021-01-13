@@ -1,0 +1,115 @@
+.modalWrap_active {
+  position: fixed;
+  display: block;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 10;
+  background: rgba(0, 0, 0, 0.6);
+
+  .modalMain {
+    position: relative;
+    display: flex;
+    width: 270px;
+    height: 164px;
+    top: 50%;
+    margin: 0 auto;
+    border-radius: 8px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: #edeeee;
+
+    .modalContent {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+
+    .modalTitle {
+      font-size: 15px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.07;
+      letter-spacing: normal;
+      padding-bottom: 20px;
+    }
+
+    .modalButton {
+      font-family: NotoSansCJKkr;
+      font-size: 15px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.47;
+      letter-spacing: normal;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      color: #1877f2;
+      outline: none;
+      cursor: pointer;
+      margin-right: 15px;
+      &:last-child {
+        margin-left: 15px;
+      }
+    }
+  }
+}
+
+.modalWrap_hide {
+  position: fixed;
+  display: none;
+  top: 0;
+  right: 0;
+  z-index: 10;
+  bottom: 0;
+  left: 0;
+
+  .modalMain {
+    position: relative;
+    display: flex;
+    width: 270px;
+    height: 164px;
+    top: 50%;
+    margin: 0 auto;
+    border-radius: 8px;
+    justify-content: center;
+    flex-direction: column;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    .modalContent {
+      position: relative;
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      margin: 0 auto;
+    }
+    .modalTitle {
+      font-size: 15px;
+      font-weight: 500;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.07;
+      letter-spacing: normal;
+      padding-bottom: 20px;
+    }
+    .modalButton {
+      font-family: NotoSansCJKkr;
+      font-size: 15px;
+      font-weight: normal;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.47;
+      letter-spacing: normal;
+      padding: 10px;
+      background-color: transparent;
+      border: none;
+      color: #1877f2;
+      cursor: pointer;
+    }
+  }
+}

@@ -7,9 +7,9 @@ import {
   REGION,
   CAR_BRAND,
   ADDITIONAL_REQUEST,
-} from '../../constants/RequestLabel';
-import { REQUEST } from '../../constants/PageTitle';
-import { DESCRIPTION } from '../../constants/Description';
+} from '../../constants/Request/RequestLabel';
+import { REQUEST } from '../../constants/Request/PageTitle';
+import { DESCRIPTION } from '../../constants/Request/Description';
 import {
   CLIENT_CONTACT_PLACEHOLDER,
   CAR_NUMBER_PLACEHOLDER,
@@ -17,7 +17,7 @@ import {
   CAR_BRAND_PLACEHOLDER,
   CAR_MODEL_PLACEHOLDER,
   ADDITIONAL_REQUEST_PLACEHOLDER,
-} from '../../constants/RequestPlaceHolder';
+} from '../../constants/Request/RequestPlaceHolder';
 import {
   CLIENT_CONTACT_NAME,
   CAR_NUMBER_NAME,
@@ -25,8 +25,8 @@ import {
   CAR_BRAND_NAME,
   REGION_NAME,
   ADDITIONAL_REQUEST_NAME,
-} from '../../constants/FormNameForInput';
-import { REQUEST_BUTTON } from '../../constants/RequestButton';
+} from '../../constants/Request/FormNameForInput';
+import { REQUEST_BUTTON } from '../../constants/Request/RequestButton';
 import { useRouter } from 'next/router';
 import styles from './Request.scss';
 import { useObserver } from 'mobx-react';

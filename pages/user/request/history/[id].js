@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './History.scss';
-import { DetailTab } from '../../../../constants/DetailTab';
+import { DetailTab } from '../../../../constants/Request/DetailTab';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
@@ -22,6 +22,7 @@ const History = ({ request }) => {
   const [pageId, setPageId] = useState('3');
   const [clicked, setClicked] = useState(false);
   const router = useRouter();
+
   const cn = classNames.bind(styles);
 
   const tabs = DetailTab.map((tab) => {
@@ -64,7 +65,7 @@ const History = ({ request }) => {
         id={request.id}
         car={request?.car.brand}
         model={request?.car.model}
-        status={request.status}
+        status={request?.status}
       />
       <div
         className={cn('request_detail_wrap', {

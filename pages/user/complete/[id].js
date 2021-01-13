@@ -1,16 +1,15 @@
-import { useRouter } from 'next/router';
 import React, { useEffect } from 'react';
 import { RequestButton } from '../../../compnents/Button';
-import { GO_TO_DETAIL } from '../../../constants/CompleteMessageButton';
+import { GO_TO_DETAIL } from '../../../constants/Request/CompleteMessageButton';
 import {
   CAR_NAME,
   CAR_NUMBER,
   REQUEST_NUMBER,
-} from '../../../constants/CompleteMessageLabel';
+} from '../../../constants/Request/CompleteMessageLabel';
 import { useObserver } from 'mobx-react';
+import { useRouter } from 'next/router';
 import styles from './Complete.scss';
 import { SERVER_URL } from '../../../config';
-
 import axios from 'axios';
 
 const isComplete = true;
