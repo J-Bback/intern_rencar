@@ -16,8 +16,8 @@ import CarItem from './CarItem';
 const SelectBrand = ({}) => {
   const router = useRouter();
   const { SelectedCarStore } = useStore();
-  const [selectedCompany, setSelectedCompany] = useState('');
-  const [selectedCar, setSelectedCar] = useState('');
+  const [selectedCompany, setSelectedCompany] = useState([]);
+  const [selectedCar, setSelectedCar] = useState([]);
   const [isActive, setIsActive] = useState(false);
 
   const isValid =

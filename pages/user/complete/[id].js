@@ -8,7 +8,6 @@ import {
   REQUEST_NUMBER,
 } from '../../../constants/CompleteMessageLabel';
 import { useObserver } from 'mobx-react';
-import useStore from '../../../stores';
 import styles from './Complete.scss';
 import { SERVER_URL } from '../../../config';
 

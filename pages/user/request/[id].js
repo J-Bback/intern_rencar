@@ -1,8 +1,12 @@
-import React, { useState, useRef } from 'react';
+import react, { useState, useEffect, useRef } from 'react';
 import { RequestHeader } from '../../../compnents/Header';
 import { DetailTab } from '../../../constants/DetailTab';
+import {
+  FIRST_CAR,
+  SECONDE_CAR,
+  ADDITIONAL_REQUEST,
+} from '../../../constants/SuggestionLabel';
 import { useObserver } from 'mobx-react';
-import useStore from '../../../stores';
 import { useRouter } from 'next/router';
 import classNames from 'classnames/bind';
 import axios from 'axios';
@@ -24,22 +28,25 @@ export async function getServerSideProps(context) {
 const requestDetail = ({ suggestions, request }) => {
   const [pageId, setPageId] = useState('1');
   const [clicked, setClicked] = useState(false);
-  const { SelectedRequestTabId } = useStore();
   const router = useRouter();
-  const animated = useRef();
   const cn = classNames.bind(styles);
-  console.log(request);
+  const reservation_id =
+    typeof window !== 'undefined' ? localStorage.getItem('reservation') : null;
 
   const onSelectProposal = (id) => {
     const token = cookieCutter.get('token');
+    const data = {
+      status: 1,
+      suggestion_id: id,
+    };
     axios
-      .post(`${SERVER_URI}/suggestion/${id}`, {
+      .patch(`${SERVER_URL}/request/${request.id}`, data, {
         headers: { Authorization: token },
       })
       .then((res) => {
-        console.log(res, 'res');
-        if (res.status === 200) {
-          router.push(`/user/main`);
+        if (res.data.message === 'success') {
+          localStorage.setItem('reservation', request.id);
+          router.push(`/user/request/reservation/${request.id}`);
         }
       })
       .catch((err) => console.log(err));
@@ -50,11 +57,16 @@ const requestDetail = ({ suggestions, request }) => {
       <li
         className={tab.id == pageId ? styles.active : styles.tab_list}
         onClick={(e) => {
-          {
+          if (reservation_id == request.id) {
+            tab.url === ''
+              ? router.push(`/user/request/reservation/${request.id}`)
+              : router.push(`/user/request/${tab.url}/${request.id}`);
+          } else {
             tab.url === ''
               ? router.push(`/user/request/${request.id}`)
               : router.push(`/user/request/${tab.url}/${request.id}`);
           }
+
           if (
             e.target.className.includes('active') ||
             e.target.className.includes('anchor')
@@ -84,13 +96,13 @@ const requestDetail = ({ suggestions, request }) => {
         </div>
         <div className={styles.content}>
           <div className={styles.row}>
-            <div className={styles.car}>제안 차량 1</div>
+            <div className={styles.car}>{FIRST_CAR}</div>
             <div className={styles.name}>
               {el.first_car_model} {el.first_car_brand}
             </div>
           </div>
           <div className={styles.row}>
-            <div className={styles.car}>제안 차량 2</div>
+            <div className={styles.car}>{SECONDE_CAR}</div>
             <div className={styles.name}>
               {el.second_car_model !== el.first_car_model
                 ? el.second_car_model
@@ -101,7 +113,7 @@ const requestDetail = ({ suggestions, request }) => {
             </div>
           </div>
           <div className={styles.row}>
-            <div className={styles.car}>추가제안사항</div>
+            <div className={styles.car}>{ADDITIONAL_REQUEST}</div>
             <div className={styles.info}>{el.additional_info}</div>
           </div>
         </div>
@@ -111,13 +123,17 @@ const requestDetail = ({ suggestions, request }) => {
 
   return useObserver(() => (
     <div className={styles.container}>
-      <RequestHeader id={request.id} model={request?.car.model} />
+      <RequestHeader
+        id={request.id}
+        model={request?.car.model}
+        status={request.status}
+      />
       <div
-        className={cn('request_detail_wrap', { show: clicked, hide: !clicked })}
-        ref={animated}>
-        <div
-          className={styles.request_detail_header}
-          onClick={() => setClicked(!clicked)}>
+        className={cn('request_detail_wrap', {
+          show: clicked,
+          hide: !clicked,
+        })}>
+        <div className={styles.request_detail_header}>
           <div className={styles.header}>
             <ul className={styles.list}>{tabs}</ul>
           </div>
@@ -126,11 +142,11 @@ const requestDetail = ({ suggestions, request }) => {
           <div className={styles.request_background}>
             {suggestionLists.length === 0 ? (
               <div className={styles.wrap}>
-                <div>
+                <div className={styles.img_wrap}>
                   <img
                     src='/ic-exclamation-none.png'
                     srcSet='/ic-exclamation-none@2x.png 2x,
-             /ic-exclamation-none@3x.png 3x'
+               /ic-exclamation-none@3x.png 3x'
                     alt='img'
                   />
                 </div>

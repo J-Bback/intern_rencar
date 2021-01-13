@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import ChatContainer from './ChatContainer';
 import { RequestHeader } from '../../../../compnents/Header';
-import { REQUEST_DETAIL_TITLE } from '../../../../constants/RequestDetailTitle';
 import { useRouter } from 'next/router';
 import { DetailTab } from '../../../../constants/DetailTab';
 import axios from 'axios';
@@ -27,11 +26,19 @@ const Chatting = ({ request }) => {
   const cn = classNames.bind(styles);
 
   const tabs = DetailTab.map((tab) => {
+    const reservation_id =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('reservation')
+        : null;
     return (
       <li
         className={tab.id == pageId ? styles.active : styles.tab_list}
         onClick={() => {
-          {
+          if (reservation_id == request.id) {
+            tab.url === ''
+              ? router.push(`/user/request/reservation/${request.id}`)
+              : router.push(`/user/request/${tab.url}/${request.id}`);
+          } else {
             tab.url === ''
               ? router.push(`/user/request/${request.id}`)
               : router.push(`/user/request/${tab.url}/${request.id}`);

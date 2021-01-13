@@ -15,10 +15,8 @@ const Search = ({ handleFilterBtn, handleSearch, requestData }) => {
 
 	const submit = async () => {
 		const data = { brand: brand };
-		// console.log(brand.target.value);
 		const response = await apiUser.getCarInfo(data);
 		const responseData = response.data;
-		// console.log(">>>>>>", responseData);
 		setGetData(responseData.carRequestList);
 	};
 

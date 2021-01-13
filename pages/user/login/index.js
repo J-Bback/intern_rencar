@@ -24,7 +24,6 @@ const LoginPage = () => {
         password: passwordValue,
       })
       .then((result) => {
-        console.log(result);
         if (result.data.token) {
           cookie.set('token', result.data.token);
           alert('로그인에 성공하셨습니다.');

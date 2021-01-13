@@ -62,7 +62,6 @@ const Request = () => {
         city: RequestInputStore.region.split(' ')[1],
       })
       .then((res) => {
-        console.log(res);
         if (res.status === 200) {
           const { id } = res.data.request;
           RequestInputStore.setRequestId(id);

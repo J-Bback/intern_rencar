@@ -9,12 +9,50 @@ import {
 import styles from './RequestHeader.scss';
 import { useRouter } from 'next/router';
 import { useObserver } from 'mobx-react';
-import useStore from '../../stores';
 
-function RequestHeader({ id, status, car, model }) {
+function RequestHeader({
+  id,
+  model,
+  status,
+  dispatch_date,
+  return_date,
+  dispatch_car,
+}) {
   const router = useRouter();
-  const { SelectedRequestTabId } = useStore();
-  const showProcess = {};
+  const showProcess = {
+    0: <RequestProcessBar />,
+    1: <ReservationProcessBar />,
+    2: <DispatchProcessBar />,
+    3: <ReturnProcessBar />,
+  };
+
+  const message = {
+    0: {
+      title: '사고차량',
+      date: '희망차량',
+      accident_car: model,
+      wish_car: '벤츠',
+    },
+    1: {
+      title: '사고차량',
+      date: '희망챠랑',
+      accident_car: model,
+      wish_car: '벤츠',
+    },
+    2: {
+      title: '배차차량',
+      date: '배차일시',
+      accident_car: dispatch_car ? dispatch_car : '',
+      wish_car: dispatch_date ? dispatch_date : '',
+    },
+    3: {
+      title: '배차차량',
+      date: '반납일시',
+      accident_car: dispatch_car ? dispatch_car : '',
+      wish_car: return_date ? return_date : '',
+    },
+  };
+
   return useObserver(() => (
     <>
       <div className={styles.header_wrap}>
@@ -38,15 +76,13 @@ function RequestHeader({ id, status, car, model }) {
       <div className={styles.content}>
         <div className={styles.request_id}>요청번호 {id}</div>
         <div className={styles.process_wrap}>
-          <div className={styles.wrap}>
-            <RequestProcessBar />
-          </div>
+          <div className={styles.wrap}>{showProcess[status]}</div>
         </div>
       </div>
       <div className={styles.display_wrap}>
         <div className={styles.display_group_left}>
-          <div className={styles.car_title}>사고차량</div>
-          <div className={styles.car}>{model}</div>
+          <div className={styles.car_title}>{message[status].title}</div>
+          <div className={styles.car}>{message[status].accident_car}</div>
         </div>
         <div className={styles.image_wrap}>
           <img
@@ -57,8 +93,8 @@ function RequestHeader({ id, status, car, model }) {
           />
         </div>
         <div className={styles.display_group_right}>
-          <div className={styles.car_title}>희망차량</div>
-          <div className={styles.car}>벤츠</div>
+          <div className={styles.car_title}>{message[status].date}</div>
+          <div className={styles.car}>{message[status].wish_car}</div>
         </div>
       </div>
     </>

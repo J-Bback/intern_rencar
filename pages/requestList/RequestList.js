@@ -7,7 +7,6 @@ import {
 } from "../../constants/RequestList/RequestList";
 
 export default function RequestList({ requestData }) {
-	// console.log(requestData);
 	return (
 		<Fragment>
 			{requestData?.map((list) => {

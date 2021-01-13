@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './MyRequest.scss';
-import { REQUEST_DETAIL_TITLE } from '../../../../constants/RequestDetailTitle';
 import { DetailTab } from '../../../../constants/DetailTab';
-import { useObserver } from 'mobx-react';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
@@ -18,9 +16,7 @@ import {
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
-
   const res = await axios.get(`${SERVER_URL}/rencar/request/${id}`);
-
   const { request } = await res.data;
 
   return {
@@ -35,17 +31,27 @@ const MyRequest = ({ request }) => {
   const router = useRouter();
   const [clicked, setClicked] = useState(false);
   const cn = classNames.bind(styles);
-  console.log(request);
+
   const tabs = DetailTab.map((tab) => {
+    const reservation_id =
+      typeof window !== 'undefined'
+        ? localStorage.getItem('reservation')
+        : null;
+
     return (
       <li
         className={tab.id == pageId ? styles.active : styles.tab_list}
         onClick={(e) => {
-          {
+          if (reservation_id == request.id) {
+            tab.url === ''
+              ? router.push(`/user/request/reservation/${request.id}`)
+              : router.push(`/user/request/${tab.url}/${request.id}`);
+          } else {
             tab.url === ''
               ? router.push(`/user/request/${request.id}`)
               : router.push(`/user/request/${tab.url}/${request.id}`);
           }
+
           if (
             e.target.className.includes('active') ||
             e.target.className.includes('anchor')
@@ -77,6 +83,7 @@ const MyRequest = ({ request }) => {
         id={request.id}
         car={request?.car.brand}
         model={request?.car.model}
+        status={request.status}
       />
       <div
         className={cn('request_detail_wrap', {

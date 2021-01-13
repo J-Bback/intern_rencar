@@ -13,7 +13,6 @@ class RequestInputStore {
 
   @action setValue = (e) => {
     this[e.target.name] = e.target.value;
-    console.log(this.clientContact, this.region, this.carNumber);
   };
 
   @action setRequestId = (id) => {

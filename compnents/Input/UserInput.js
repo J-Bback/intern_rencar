@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './UserInput.scss';
 
 const UserInput = ({ id, label, type, value, placeholder, name, onChange }) => {
-  console.log(value, name, 'dd');
   return (
     <div className={styles.input_wrap}>
       <label htmlFor={id ? id : null} children={label} />

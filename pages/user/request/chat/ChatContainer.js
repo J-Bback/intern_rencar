@@ -62,8 +62,6 @@ const ChatContainerClient = () => {
     // });
   }, [messageList]);
 
-  console.log(messageList);
-
   const onClickHandler = () => {
     if (message) {
       socket.emit('send_message', message);

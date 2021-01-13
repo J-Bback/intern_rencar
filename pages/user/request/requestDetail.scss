@@ -65,26 +65,20 @@
     }
 
     .request_list_wrap {
-      background-color: #e6e6e6;
+      background-color: white;
       height: 100vh;
       .request_background {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         .wrap {
-          width: 100%;
-          height: 100vh;
-          position: relative;
-          background-color: white;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          .waiting_message {
-            position: absolute;
-            top: 20%;
-            div {
-              text-align: center;
-              img {
-                width: 38px;
-                height: 38px;
-              }
+          text-align: center;
+          .img_wrap {
+            margin-top: 200px;
+            img {
+              width: 38px;
+              height: 38px;
             }
 
             .empty {
@@ -114,6 +108,7 @@
           color: #b4b4b4;
         }
         .request_list {
+          width: 100%;
           .lists {
             display: flex;
             flex-direction: column;
