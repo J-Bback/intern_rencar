@@ -19,6 +19,7 @@ const SelectInput = ({
         value={value ? value : ''}
         onClick={onClick}
         placeholder={placeholder}
+        autoComplete='off'
       />
       {image ? (
         <div className={styles.arrow_wrap}>

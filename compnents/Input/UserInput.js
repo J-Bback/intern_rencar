@@ -12,6 +12,7 @@ const UserInput = ({ id, label, type, value, placeholder, name, onChange }) => {
         onChange={onChange}
         value={value ? value : null}
         placeholder={placeholder}
+        autoComplete='off'
       />
     </div>
   );

@@ -19,6 +19,7 @@ export default function LoginInput({
         value={value ? value : ''}
         placeholder={placeholder}
         className={styles.user_input}
+        autoComplete='off'
       />
     </div>
   );
