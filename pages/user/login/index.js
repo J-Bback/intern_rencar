@@ -25,7 +25,8 @@ const LoginPage = () => {
       })
       .then((result) => {
         if (result.data.token) {
-          cookie.set('token', result.data.token);
+          cookie.set('clientToken', result.data.token);
+          cookie.set('client', JSON.stringify(result.data.user));
           alert('로그인에 성공하셨습니다.');
           router.push('/requestList');
         }

@@ -5,13 +5,14 @@ import ChatInput from '../chat/ChatInput';
 import { useObserver } from 'mobx-react';
 import { SERVER_URL } from '../../../../config';
 import io from 'socket.io-client';
+import cookie from 'js-cookie';
 
 const socket = io.connect(`${SERVER_URL}`);
 
 const ChatContainerClient = () => {
   const [room, setRoom] = useState(2);
   const [userId, setUserId] = useState(2);
-  const [user, setuser] = useState('민영');
+  const [user, setuser] = useState('client');
   const [isJoin, setIsJoin] = useState(false);
   const [message, setMessage] = useState({
     request_id: room,

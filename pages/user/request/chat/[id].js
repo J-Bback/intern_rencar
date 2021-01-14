@@ -6,8 +6,10 @@ import { DetailTab } from '../../../../constants/Request/DetailTab';
 import axios from 'axios';
 import { SERVER_URL } from '../../../../config';
 import cookieCutter from 'cookie-cutter';
+import cookie from 'js-cookie';
 import styles from './Chatting.scss';
 import classNames from 'classnames/bind';
+
 
 export async function getServerSideProps(context) {
   const { id } = context.query;
@@ -18,6 +20,7 @@ export async function getServerSideProps(context) {
     props: { request },
   };
 }
+
 
 const Chatting = ({ request }) => {
   const [pageId, setPageId] = useState('0');

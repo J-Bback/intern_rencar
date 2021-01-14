@@ -39,7 +39,7 @@ const requestDetail = ({ suggestions, request }) => {
   }, []);
 
   const onSelectProposal = (id) => {
-    const token = cookieCutter.get('token');
+    const token = cookieCutter.get('clientToken');
     const data = {
       status: 1,
       suggestion_id: id,

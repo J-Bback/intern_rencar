@@ -33,6 +33,7 @@ import { useObserver } from 'mobx-react';
 import useStore from '../../stores';
 import axios from 'axios';
 import { SERVER_URL } from '../../config';
+
 const image = true;
 
 const Request = () => {
@@ -150,7 +151,7 @@ const Request = () => {
             onChange={(e) => {
               onChangeHandler(e);
             }}
-            value={RequestInputStore.car_number}
+            value={RequestInputStore.carNumber}
           />
         </div>
         <div className={styles.group}>
