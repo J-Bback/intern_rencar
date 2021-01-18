@@ -24,6 +24,7 @@ const LoginPage = () => {
         password: passwordValue,
       })
       .then((result) => {
+        console.log(result);
         if (result.data.token) {
           cookie.set('clientToken', result.data.token);
           cookie.set('client', JSON.stringify(result.data.user));
@@ -32,9 +33,8 @@ const LoginPage = () => {
         }
         if (result.error === 403) {
           alert(result.message);
-          alert(result.message);
         } else if (result.error === 405) {
-          alert(result.message);
+          alert('비밀번호를 확인해주세요.');
         } else if (result.error === 406) {
           alert(result.message);
         }

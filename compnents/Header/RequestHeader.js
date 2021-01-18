@@ -39,8 +39,6 @@ function RequestHeader({
     dispatchDate,
   } = ShowDispatchAndReturnStore.dispatchAndReturnData;
 
-  console.log(ShowDispatchAndReturnStore.dispatchAndReturnData);
-  console.log(dispatchCar, returnDate, dispatchDate);
   const showProcess = {
     0: <RequestProcessBar />,
     1: <ReservationProcessBar />,

@@ -29,6 +29,9 @@ const requestDetail = ({ suggestions, request }) => {
   const [clicked, setClicked] = useState(false);
   const router = useRouter();
   const cn = classNames.bind(styles);
+
+  console.log(request, 'request');
+
   const reservation_id =
     typeof window !== 'undefined' ? localStorage.getItem('reservation') : null;
 

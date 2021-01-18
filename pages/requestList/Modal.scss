@@ -2,87 +2,86 @@
   position: absolute;
   bottom: 0;
   width: 100%;
-  z-index: 10;
+  z-index: 100;
   .modal_container {
     width: 375px;
-  height: 440px;
-  box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.16);
-  background-color: #ffffff;
-  font-family: NotoSansKR;
-  font-stretch: normal;
-  font-style: normal;
-  letter-spacing: normal;
-  border: solid 1px #ffffff;
-  border-top-left-radius: 5%;
-  border-top-right-radius: 5%;
+    height: 440px;
+    box-shadow: 0 -1px 10px 0 rgba(0, 0, 0, 0.16);
+    background-color: #ffffff;
+    font-family: NotoSansKR;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    border: solid 1px #ffffff;
+    border-top-left-radius: 5%;
+    border-top-right-radius: 5%;
 
-  .title_container {
-    display: flex;
-  }
-  .title {
-    width: 66px;
-    height: 27px;
-    margin: 20px 0 0px 155px;
-    font-size: 18px;
-    font-weight: 500;
-    color: #333333;
-  }
-  .modal_close {
-    width: 48px;
-    height: 48px;
-    margin: 20px 0 10px 101px;
-  }
-
-  .contents_container {
-    padding: 0;
-    .request_view {
-      margin: 10px 0 15px 20px;
-      font-size: 16px;
+    .title_container {
+      display: flex;
+    }
+    .title {
+      width: 66px;
+      height: 27px;
+      margin: 20px 0 0px 155px;
+      font-size: 18px;
       font-weight: 500;
       color: #333333;
     }
-    .button_container {
-      margin-left: 10px;
-    .filter_btn {
-      width: 76px;
-      height: 38px;
-      margin: 0 0 15px 10px;
-      padding: 0;
-      background-color: #ffffff;
-      border: solid 1px #e6e6e6;
-      border-radius: 3px;
+    .modal_close {
+      width: 48px;
+      height: 48px;
+      margin: 20px 0 10px 101px;
     }
-    .activate_filter_btn {
-      width: 76px;
-      height: 38px;
-      margin: 0 0 15px 10px;
-      padding: 0;
-      background-color: #575757;
-      color: #ffffff;
-      border: solid 1px #575757;
-      border-radius: 3px;
-      outline: none;
-    }
-  }
-  .reset_button {
-    width: 160px;
-    height: 46px;
-    margin: 15px 0 0 20px;
-    background-color: #ffffff;
-    color: #333333;
-    border: solid 1px #929292;
-    border-radius: 5px;
-  }
-  .application_button {
-    width: 160px;
-    height: 46px;
-    margin: 15px 0 0 15px;
-    background-color: #3888e6;
-    color:#ffffff;
-    border: solid 0px #929292;
-    border-radius: 5px;
 
-  }
-  }
+    .contents_container {
+      padding: 0;
+      .request_view {
+        margin: 10px 0 15px 20px;
+        font-size: 16px;
+        font-weight: 500;
+        color: #333333;
+      }
+      .button_container {
+        margin-left: 10px;
+        .filter_btn {
+          width: 76px;
+          height: 38px;
+          margin: 0 0 15px 10px;
+          padding: 0;
+          background-color: #ffffff;
+          border: solid 1px #e6e6e6;
+          border-radius: 3px;
+        }
+        .activate_filter_btn {
+          width: 76px;
+          height: 38px;
+          margin: 0 0 15px 10px;
+          padding: 0;
+          background-color: #575757;
+          color: #ffffff;
+          border: solid 1px #575757;
+          border-radius: 3px;
+          outline: none;
+        }
+      }
+      .reset_button {
+        width: 160px;
+        height: 46px;
+        margin: 15px 0 0 20px;
+        background-color: #ffffff;
+        color: #333333;
+        border: solid 1px #929292;
+        border-radius: 5px;
+      }
+      .application_button {
+        width: 160px;
+        height: 46px;
+        margin: 15px 0 0 15px;
+        background-color: #3888e6;
+        color: #ffffff;
+        border: solid 0px #929292;
+        border-radius: 5px;
+      }
+    }
   }
 }

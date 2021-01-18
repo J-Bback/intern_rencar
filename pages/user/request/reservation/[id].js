@@ -106,20 +106,28 @@ const Reservation = ({ request, suggestions }) => {
           <div className={styles.wrap}>
             <div className={styles.header}>
               <div className={styles.title}>{COMPANY_NAME}</div>
-              <div className={styles.name}>{result.company_name}</div>
+              <div className={styles.name}>
+                {request.status != 0 && result.company_name
+                  ? result.company_name
+                  : null}
+              </div>
             </div>
             <div className={styles.divider}></div>
             <div className={styles.suggestion_cars}>
               <div className={styles.row}>
                 <div className={styles.title}>{FIRST_CAR}</div>
                 <div className={styles.name}>
-                  {result.first_car_brand} {result.first_car_model}
+                  {request.status != 0 && result.first_car_brand
+                    ? result.first_car_brand
+                    : null}
                 </div>
               </div>
               <div className={styles.row}>
                 <div className={styles.title}>{SECONDE_CAR}</div>
                 <div className={styles.name}>
-                  {result.second_car_brand} {result.second_car_model}
+                  {request.status != 0 && result.second_car_brand
+                    ? result.second_car_brand
+                    : null}
                 </div>
               </div>
             </div>
@@ -127,7 +135,11 @@ const Reservation = ({ request, suggestions }) => {
             <div className={styles.additional_info}>
               <div className={styles.content}>
                 <div className={styles.title}>{ADDITIONAL_REQUEST}</div>
-                <div className={styles.name}>{result.additional_info}</div>
+                <div className={styles.name}>
+                  {request.status != 0 && result.additional_info
+                    ? result.additional_info
+                    : null}
+                </div>
               </div>
             </div>
           </div>
