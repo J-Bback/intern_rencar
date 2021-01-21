@@ -8,7 +8,7 @@ import { SERVER_URL } from '../../../config';
 import {
   PROPOSAL_HEADER,
   PROPOSAL_FOOTER,
-} from '../../../constants/request/ProposalInfo';
+} from '../../../constants/Request/ProposalInfo';
 import axios from 'axios';
 import CompanyItem from './CompanyItem';
 import CarItem from './CarItem';
