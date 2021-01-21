@@ -37,7 +37,6 @@ yarn-error.log*
 .env
 /config.js
 /next.config.js
-/server.js
 
 
 
