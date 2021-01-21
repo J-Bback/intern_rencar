@@ -3,15 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev -p 5800",
-    "build": "next build -p",
-    "start": "next start -p 5800"
+    "dev": "node server.js",
+    "build": "next build",
+    "start": "NODE_ENV=production PORT=80 node server.js"
   },
   "dependencies": {
     "axios": "^0.21.0",
     "classnames": "^2.2.6",
     "cookie": "^0.4.1",
     "cookie-cutter": "^0.2.0",
+    "express": "^4.17.1",
     "js-cookie": "^2.2.1",
     "markdown-with-front-matter-loader": "^0.1.0",
     "mobx": "^4.15.7",

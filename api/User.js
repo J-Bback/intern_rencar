@@ -1,4 +1,4 @@
-import callApi from "../utils/callApi";
+import callApi from '../utils/callApi';
 
 // export default {
 // 	getUserInfo(data) {
@@ -11,11 +11,11 @@ import callApi from "../utils/callApi";
 // };
 
 export default {
-	getCarInfo(data) {
-		return callApi({
-			method: "get",
-			url: "/api/getCarInfo",
-			params: data
-		});
-	}
+  getCarInfo(data) {
+    return callApi({
+      method: 'get',
+      url: '/api/getCarInfo',
+      params: data,
+    });
+  },
 };
